@@ -2,11 +2,18 @@ package com.densin.rws.jdbctojpa.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+@Entity
 public class Person {
+	@Id
+	@GeneratedValue
 private int id;
 private String name;
 private String location;
 private Date birthDate;
+
 
 public Person(int id, String name, String location, Date birthDate) {
 	super();
