@@ -22,6 +22,14 @@ public Person(int id, String name, String location, Date birthDate) {
 	this.location = location;
 	this.birthDate = birthDate;
 }
+
+public Person( String name, String location, Date birthDate) {
+	super();
+
+	this.name = name;
+	this.location = location;
+	this.birthDate = birthDate;
+}
 @Override
 public String toString() {
 	return "\nPerson [id=" + id + ", name=" + name + ", location=" + location + ", birthDate=" + birthDate + "]";

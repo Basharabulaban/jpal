@@ -1,7 +1,11 @@
 package com.densin.rws.jdbctojpa;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.densin.rws.jdbctojpa.entity.Person;
 import com.densin.rws.jdbctojpa.jpa.PersonJpaRepository;
+
+import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +32,8 @@ public class JpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("userid 1 -> {} ",	repository.findbyId(1));
-
+	
+		logger.info("userid 1 -> {} ",	repository.update(new Person("kiki","USA",new Date() )));
 	}
 
 }
