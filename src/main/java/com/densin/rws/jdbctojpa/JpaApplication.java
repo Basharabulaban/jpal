@@ -12,13 +12,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import net.bytebuddy.asm.Advice.This;
 
 @SpringBootApplication
-public class JdbcToJpaApplication implements CommandLineRunner {
+public class JpaApplication implements CommandLineRunner {
 	
 	private Logger logger = LoggerFactory.getLogger(This.class);
 @Autowired
 	PersonJdbcDao dao;
 	public static void main(String[] args) {
-		SpringApplication.run(JdbcToJpaApplication.class, args);
+		SpringApplication.run(JpaApplication.class, args);
 	}
 
 	@Override
