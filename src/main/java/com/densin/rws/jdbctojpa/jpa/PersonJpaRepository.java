@@ -1,5 +1,9 @@
 package com.densin.rws.jdbctojpa.jpa;
 
-public class JpaRepository {
+
+//Repository
+//transaction
+
+public class PersonJpaRepository implment Reposi{
 
 }
