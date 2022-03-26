@@ -20,9 +20,6 @@ public class JpaApplication implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(This.class);
  @Autowired
  PersonJpaRepository repository;
- 
-
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaApplication.class, args);
@@ -30,10 +27,8 @@ public class JpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-	
-	//	logger.info("All Users -> {}",	repository.findAll());
 		logger.info("userid 1 -> {} ",	repository.findbyId(1));
-	//	logger.info("users by -> {} ",	repository.findbylocation("Amman"));
+
 	}
 
 }
