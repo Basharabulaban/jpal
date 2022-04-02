@@ -34,6 +34,11 @@ public class JpaApplication implements CommandLineRunner {
 		logger.info("userid 1 -> {} ",	repository.findbyId(1));
 	
 		logger.info("userid 1 -> {} ",	repository.update(new Person("kiki","USA",new Date() )));
+		
+		repository.Deletebyid(101);
+		logger.info("userid 1 -> {} ",	repository.findbyId(1));
+		logger.info("find all {} ",	repository.findAll());
+		
 	}
 
 }
