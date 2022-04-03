@@ -9,7 +9,21 @@ public class Course {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	
 	private String name;
+	
+	
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + "]";
+	}
+	
+//	@Override
+//	public String toString() {
+//		return String.format("Course [%s]",name);
+//	}
+	
 	protected Course() {
 		//super();
 	}
