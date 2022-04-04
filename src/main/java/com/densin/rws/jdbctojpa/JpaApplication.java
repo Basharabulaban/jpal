@@ -1,12 +1,5 @@
 package com.densin.rws.jdbctojpa;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.densin.rws.jdbctojpa.entity.Course;
-import com.densin.rws.jdbctojpa.entity.Person;
-import com.densin.rws.jdbctojpa.jpa.CourseRepository;
-import com.densin.rws.jdbctojpa.jpa.PersonJpaRepository;
-
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -14,9 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-
+import com.densin.rws.jdbctojpa.entity.Course;
+import com.densin.rws.jdbctojpa.entity.Person;
+import com.densin.rws.jdbctojpa.jpa.PersonJpaRepository;
+import com.densin.rws.jdbctojpa.jparepository.CourseRepository;
 
 import net.bytebuddy.asm.Advice.This;
 

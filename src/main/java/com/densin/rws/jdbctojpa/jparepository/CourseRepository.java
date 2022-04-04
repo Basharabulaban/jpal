@@ -1,4 +1,4 @@
-package com.densin.rws.jdbctojpa.jpa;
+package com.densin.rws.jdbctojpa.jparepository;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
