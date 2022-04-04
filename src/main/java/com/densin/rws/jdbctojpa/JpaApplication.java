@@ -46,7 +46,11 @@ public class JpaApplication implements CommandLineRunner {
 		logger.info("find all {} ",	repository.findAll());
 		
 		logger.info("findById(10001L)-->",courserecord);
+		
+		
 		logger.info("course id = 10001 -> {} ",courseRepository.findById(10001L));
+	//	courseRepository.deleteById(10002L);;
+		logger.info("course id = 10001 -> {} ",courseRepository.findById(10002L));
 		
 		
 	}

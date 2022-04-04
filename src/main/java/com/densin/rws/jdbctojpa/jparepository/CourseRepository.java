@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.densin.rws.jdbctojpa.entity.Course;
 @Repository
-
+@Transactional
 
 public class CourseRepository {
 @Autowired
@@ -20,7 +20,15 @@ public Course findById(Long id) {
 }
 
 //public Course save(Course course)
-//public void deleteById(Long id)
+
+
+
+public void deleteById(long id) {
+	Course course = findById(id);
+	
+	 entityManager.remove(course) ;
+	
+}
 
 
 
