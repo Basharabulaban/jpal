@@ -52,7 +52,7 @@ public class JpaApplication implements CommandLineRunner {
 	//	courseRepository.deleteById(10002L);;
 		logger.info("course id = 10001 -> {} ",courseRepository.findById(10002L));
 		
-		
+		courseRepository.save(new Course("Microservises in 100 steps"));
 	}
 
 }
