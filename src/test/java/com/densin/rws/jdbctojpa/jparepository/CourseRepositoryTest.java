@@ -53,4 +53,16 @@ class CourseRepositoryTest {
 
 	}
 	
+	@Test
+	 @DirtiesContext   // in order to return back data as it were 
+	void UpdateByEntity_basic() {
+		
+		Course course = repository.findById(10002L);
+		course.setName("course test name");
+		repository.save(course);
+		assertEquals("course test name", course.getName());
+//		logger.info("test is running ->",course);
+
+	}
+	
 }
