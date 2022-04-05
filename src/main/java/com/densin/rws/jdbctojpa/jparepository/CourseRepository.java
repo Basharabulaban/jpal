@@ -19,7 +19,14 @@ public Course findById(Long id) {
 	
 }
 
-//public Course save(Course course)
+public Course savebyentity(Course course) {
+	if (course.getId()==null) {
+		entityManager.persist(course);
+	}else {
+		entityManager.merge(course);
+	}
+	return course;
+}
 
 
 
