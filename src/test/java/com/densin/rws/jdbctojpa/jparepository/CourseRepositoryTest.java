@@ -40,4 +40,17 @@ class CourseRepositoryTest {
 //		logger.info("test is running ->",course);
 
 	}
+	
+	@Test
+	 @DirtiesContext   // in order to return back data as it were 
+	void saveByEntity_basic() {
+		Course course = new Course("course name 2");
+		repository.save(course);
+		
+	//	assertNull(repository.findById(10002L));
+		assertEquals("course name 2", course.getName());
+//		logger.info("test is running ->",course);
+
+	}
+	
 }
