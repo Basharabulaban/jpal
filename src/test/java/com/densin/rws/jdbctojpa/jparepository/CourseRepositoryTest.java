@@ -58,10 +58,14 @@ class CourseRepositoryTest {
 	void UpdateByEntity_basic() {
 		
 		Course course = repository.findById(10002L);
-		course.setName("course test name");
+		assertEquals("Spring in 150 steps", course.getName());
+		
+		course.setName("Spring in 50 steps");
 		repository.save(course);
-		assertEquals("course test name", course.getName());
-//		logger.info("test is running ->",course);
+		
+		Course course1 = repository.findById(10002L);
+		assertEquals("Spring in 50 steps", course1.getName());
+
 
 	}
 	
