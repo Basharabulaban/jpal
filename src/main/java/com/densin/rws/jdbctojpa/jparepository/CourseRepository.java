@@ -59,7 +59,7 @@ public void playWithEntityManager() {
 	entityManager.persist(course2);
 	entityManager.flush();  // changes will be send out to databases
 	
-
+	entityManager.detach(course2);
 	
 	course2.setName("React js in 120 steps-update");
 	entityManager.flush();  // chnages will be send out to databases
