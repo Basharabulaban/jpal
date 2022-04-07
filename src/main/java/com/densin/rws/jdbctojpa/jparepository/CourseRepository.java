@@ -45,6 +45,13 @@ public void deleteById(long id) {
 
 public void playWithEntityManager() {
 	logger.info("playWithEntityManager - start");
+	// entityManager.persist(new Course("Web Services in 10 steps"));  // Alt shift l
+	
+	Course course = new Course("Web Services in 10 steps");
+	entityManager.persist(course);
+	course.setName("Web Services in 10 steps-update");
+	
+	
 	
 }
 
