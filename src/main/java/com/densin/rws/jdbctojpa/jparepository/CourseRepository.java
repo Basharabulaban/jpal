@@ -3,16 +3,22 @@ package com.densin.rws.jdbctojpa.jparepository;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
+//import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.densin.rws.jdbctojpa.entity.Course;
+
+import net.bytebuddy.asm.Advice.This;
 @Repository
 @Transactional
 
 public class CourseRepository {
 @Autowired
 EntityManager entityManager ;
+private Logger logger = LoggerFactory.getLogger(This.class);
 
 public Course findById(Long id) {
 	return entityManager.find(Course.class, id);
@@ -37,6 +43,9 @@ public void deleteById(long id) {
 	
 }
 
-
+public void playWithEntityManager() {
+	logger.info("playWithEntityManager - start");
+	
+}
 
 }

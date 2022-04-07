@@ -69,4 +69,13 @@ class CourseRepositoryTest {
 
 	}
 	
+	@Test
+	 @DirtiesContext   // in order to return back data as it were 
+	void playWithEnityManager() {
+		
+		repository.playWithEntityManager();
+	
+
+	}
+	
 }
