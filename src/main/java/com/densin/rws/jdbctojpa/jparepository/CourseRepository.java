@@ -49,23 +49,19 @@ public void playWithEntityManager() {
 	
 	Course course = new Course("Web Services in 10 steps");
 	entityManager.persist(course);
-//	entityManager.clear();  // per it location afect what to send to database
-	entityManager.flush();  // changes will be send out to databases
-	
-	//entityManager.clear();
-	
-	course.setName("Web Services in 10 steps-update");
-	entityManager.flush();  // changes will be send out to databases
-	
 	Course course2 = new Course("React js in 120 steps");
 	entityManager.persist(course2);
+//	entityManager.clear();  // per it location afect what to send to database
+	entityManager.flush();  // changes will be send out to databases
+//  entityManager.detach(course2);
+//  entityManager.clear();
+	
+	course.setName("Web Services in 10 steps-update");
+	course2.setName("React js in 120 steps-update");
 	entityManager.flush();  // changes will be send out to databases
 	
-	// entityManager.detach(course2);
 	
-	//entityManager.clear();
-	course2.setName("React js in 120 steps-update");
-	entityManager.flush();  // chnages will be send out to databases
+
 		
 }
 
