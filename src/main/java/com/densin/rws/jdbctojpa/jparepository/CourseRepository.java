@@ -49,7 +49,14 @@ public void playWithEntityManager() {
 	
 	Course course = new Course("Web Services in 10 steps");
 	entityManager.persist(course);
+	
+	
+	
 	course.setName("Web Services in 10 steps-update");
+	
+	Course course2 = new Course("React js in 120 steps");
+	entityManager.persist(course2);
+	course2.setName("React js in 120 steps-update");
 		
 }
 
