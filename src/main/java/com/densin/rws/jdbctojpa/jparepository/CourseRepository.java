@@ -50,9 +50,7 @@ public void playWithEntityManager() {
 	Course course = new Course("Web Services in 10 steps");
 	entityManager.persist(course);
 	course.setName("Web Services in 10 steps-update");
-	
-	
-	
+		
 }
 
 }
