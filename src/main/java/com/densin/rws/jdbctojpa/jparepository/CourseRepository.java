@@ -47,8 +47,8 @@ public void playWithEntityManager() {
 	logger.info("playWithEntityManager - start");
 	// entityManager.persist(new Course("Web Services in 10 steps"));  // Alt shift l
 	
-	Course course = new Course("Web Services in 10 steps");
-	entityManager.persist(course);
+	Course course1 = new Course("Web Services in 10 steps");
+	entityManager.persist(course1);
 	Course course2 = new Course("React js in 120 steps");
 	entityManager.persist(course2);
 //	entityManager.clear();  // per it location afect what to send to database
@@ -56,9 +56,9 @@ public void playWithEntityManager() {
 //  entityManager.detach(course2);
 //  entityManager.clear();
 	
-	course.setName("Web Services in 10 steps-update");
+	course1.setName("Web Services in 10 steps-update");
 	course2.setName("React js in 120 steps-update");
-	entityManager.refresh(course);  // this to not update the course record 
+	entityManager.refresh(course1);  // this to not update the course record 
 	entityManager.flush();  // changes will be send out to databases 
 		
 }
