@@ -58,10 +58,8 @@ public void playWithEntityManager() {
 	
 	course.setName("Web Services in 10 steps-update");
 	course2.setName("React js in 120 steps-update");
-	entityManager.flush();  // changes will be send out to databases
-	
-	
-
+	entityManager.refresh(course);  // this to not update the course record 
+	entityManager.flush();  // changes will be send out to databases 
 		
 }
 
