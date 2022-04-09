@@ -50,5 +50,13 @@ class JPQLTest {
 		logger.info("typed1 Select c from Course c -> {} ", resultList);
 
 	}
+	
+	@Test
+	void JPQL_where() { // alt shift l to extract local variables
+		TypedQuery<Course> query = entityManager.createQuery("Select c from Course c where name like '%100 steps' ", Course.class);
+		List<Course> resultList = query.getResultList();
+		logger.info("typed1 Select c from Course c where name like %100 Steps -> {} ", resultList);
+
+	}
 
 }
