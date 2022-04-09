@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -27,18 +28,27 @@ class JPQLTest {
 
 	@Test
 	void findById_basic() {
-List resultList= entityManager.createQuery("Select c from Course c").getResultList();
-		logger.info("Select c from Course c -> {} ",resultList);
+		List resultList = entityManager.createQuery("Select c from Course c").getResultList();
+		logger.info("Select c from Course c -> {} ", resultList);
 
 	}
-// check TypedQuery   
+
+ 
 	@Test
 	void findById_typed() { // alt shift l to extract local variables
-EntityManager query = entityManager;
-List resultList= query.createQuery("Select c from Course c",Course.class).getResultList();
-		logger.info("Select c from Course c -> {} ",resultList);
+		EntityManager query = entityManager;
+		List resultList = query.createQuery("Select c from Course c", Course.class).getResultList();
+		logger.info("typed Select c from Course c -> {} ", resultList);
+
+	}
+	
+	// check TypedQuery  
+	@Test
+	void findById_typed1() { // alt shift l to extract local variables
+		TypedQuery<Course> query = entityManager.createQuery("Select c from Course c", Course.class);
+		List<Course> resultList = query.getResultList();
+		logger.info("typed1 Select c from Course c -> {} ", resultList);
 
 	}
 
-	
 }
