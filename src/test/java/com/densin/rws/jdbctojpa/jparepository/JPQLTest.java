@@ -27,7 +27,7 @@ class JPQLTest {
 	EntityManager entityManager;
 
 	@Test
-	void findById_basic() {
+	void JPQL_basic() {
 		List resultList = entityManager.createQuery("Select c from Course c").getResultList();
 		logger.info("Select c from Course c -> {} ", resultList);
 
@@ -35,7 +35,7 @@ class JPQLTest {
 
  
 	@Test
-	void findById_typed() { // alt shift l to extract local variables
+	void JPQL_nottyped() { // alt shift l to extract local variables
 		EntityManager query = entityManager;
 		List resultList = query.createQuery("Select c from Course c", Course.class).getResultList();
 		logger.info("typed Select c from Course c -> {} ", resultList);
@@ -44,7 +44,7 @@ class JPQLTest {
 	
 	// check TypedQuery  
 	@Test
-	void findById_typed1() { // alt shift l to extract local variables
+	void JPQL_typed1() { // alt shift l to extract local variables
 		TypedQuery<Course> query = entityManager.createQuery("Select c from Course c", Course.class);
 		List<Course> resultList = query.getResultList();
 		logger.info("typed1 Select c from Course c -> {} ", resultList);
