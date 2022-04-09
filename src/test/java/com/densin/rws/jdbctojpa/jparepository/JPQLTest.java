@@ -31,7 +31,14 @@ List resultList= entityManager.createQuery("Select c from Course c").getResultLi
 		logger.info("Select c from Course c -> {} ",resultList);
 
 	}
+// check TypedQuery   
+	@Test
+	void findById_typed() { // alt shift l to extract local variables
+EntityManager query = entityManager;
+List resultList= query.createQuery("Select c from Course c",Course.class).getResultList();
+		logger.info("Select c from Course c -> {} ",resultList);
 
+	}
 
 	
 }
