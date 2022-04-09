@@ -28,7 +28,7 @@ class JPQLTest {
 	@Test
 	void findById_basic() {
 List resultList= entityManager.createQuery("Select c from Course c").getResultList();
-		logger.info("elect c from Course c -> {} ",resultList);
+		logger.info("Select c from Course c -> {} ",resultList);
 
 	}
 
