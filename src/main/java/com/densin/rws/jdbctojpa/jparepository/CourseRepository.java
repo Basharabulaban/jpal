@@ -65,6 +65,18 @@ public void playWithEntityManager() {
 		
 }
 
+public void playWithcreate_updaterecordwithdate() {
+
+	//Course course1 = new Course("Web Services in 10 steps");
+//	entityManager.persist(course1);
+	
+	Course course2 = findById(10001L) ;
+	
+	course2.setName("JPA in 50 steps-update");	
+			
+}
+
+
 public void playWithname_setnull() {
 	// TODO Auto-generated method stub
 	Course course1 = new Course("Web Services in 10 steps");

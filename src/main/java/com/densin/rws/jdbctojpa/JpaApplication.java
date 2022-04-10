@@ -53,6 +53,8 @@ public class JpaApplication implements CommandLineRunner {
 		logger.info("course id = 10001 -> {} ",courseRepository.findById(10002L));
 		
 		courseRepository.save(new Course("Microservises in 100 steps"));  // this is save new record with .save
+		courseRepository.playWithcreate_updaterecordwithdate();
+		
 		courseRepository.playWithEntityManager();
 		
 	
