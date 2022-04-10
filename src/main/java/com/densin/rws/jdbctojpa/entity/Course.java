@@ -1,5 +1,7 @@
 package com.densin.rws.jdbctojpa.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,11 @@ public class Course {
 	@Column(nullable = false) 
 	private String name;
 	
+	
+	
+	
+	private LocalDateTime lastUpdateDate;
+	private LocalDateTime createDate;
 	
 	@Override
 	public String toString() {
