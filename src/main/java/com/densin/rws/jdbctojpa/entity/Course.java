@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 
 
 @Entity
@@ -26,8 +29,10 @@ public class Course {
 	
 	
 	
-	
+	@UpdateTimestamp 
 	private LocalDateTime lastUpdateDate;
+	
+	@CreationTimestamp
 	private LocalDateTime createDate;
 	
 	@Override
