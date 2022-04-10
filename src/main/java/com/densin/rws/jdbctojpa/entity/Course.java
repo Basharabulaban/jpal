@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+
 @Entity
 //@Table(name="CourseDetails")   //  the name of the table is course_details  
 //@Table(name="Course")   //  you can copmment this as table and class is the same
@@ -17,6 +19,7 @@ public class Course {
 	//for @Column   you can use unique , nullable, insertable, updatable,length,precision, scall
 	
 	// @Column(name="fullname",nullable = false) // name can not have null value
+	@Column(nullable = false) 
 	private String name;
 	
 	
