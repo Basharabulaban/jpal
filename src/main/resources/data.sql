@@ -27,6 +27,6 @@ insert into person(id,name,location,birth_date) values(102,'Yaman','Amman',sysda
 insert into course(id,name,create_date,last_update_date) 
 values(10001L,'JPA in 50 steps', sysdate(), sysdate());
 insert into course(id,name,create_date,last_update_date) 
-values(10002L,'Spring in 150 steps',sysdate(), sysdate());
+values(10002L,'Spring in 100 steps',sysdate(), sysdate());
 insert into course(id,name,create_date,last_update_date) 
 values(10003L,'Java in 10 steps',sysdate(), sysdate());

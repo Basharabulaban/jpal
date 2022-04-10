@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.junit.jupiter.api.Test;
@@ -28,11 +29,21 @@ class JPQLTest {
 
 	@Test
 	void JPQL_basic() {
-		List resultList = entityManager.createQuery("Select c from Course c").getResultList();
+		Query query =entityManager.createQuery("Select c from Course c");
+		List resultList =query.getResultList();
 		logger.info("Select c from Course c -> {} ", resultList);
 
 	}
 
+	@Test    // this is the latest to use createNamedQuery , which teh same as previous method
+	void JPQL_basic_querynamed() {
+		Query query =entityManager.createNamedQuery("query_get_all_courses");
+		List resultList =query.getResultList();
+		logger.info("Select c from Course c -> {} ", resultList);
+
+	}
+	
+	
  
 	@Test
 	void JPQL_nottyped() { // alt shift l to extract local variables
@@ -51,6 +62,8 @@ class JPQLTest {
 
 	}
 	
+	
+	
 	@Test
 	void JPQL_where() { // alt shift l to extract local variables
 		TypedQuery<Course> query = entityManager.createQuery("Select c from Course c where name like '%100 steps' ", Course.class);
@@ -59,4 +72,15 @@ class JPQLTest {
 
 	}
 
+	
+	// using named query
+	//
+	@Test
+	void JPQL_where_named_query() { // alt shift l to extract local variables
+		TypedQuery<Course> query = entityManager.createNamedQuery("query_get_specfic_steps", Course.class);
+		List<Course> resultList = query.getResultList();
+		logger.info("typed1 Select c from Course c where name like %100 steps -> {} ", resultList);
+
+	}
+	
 }
