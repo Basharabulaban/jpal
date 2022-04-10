@@ -14,9 +14,9 @@ public class Course {
 	@Id
 	@GeneratedValue
 	private Long id;
-	//for coulmns   you can use unique , nullable, insertable, updatable,length,precision, scall
+	//for @Column   you can use unique , nullable, insertable, updatable,length,precision, scall
 	
-	@Column(name="fullname",nullable = false) // name can not have null value
+	// @Column(name="fullname",nullable = false) // name can not have null value
 	private String name;
 	
 	
