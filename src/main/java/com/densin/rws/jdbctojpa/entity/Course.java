@@ -3,8 +3,12 @@ package com.densin.rws.jdbctojpa.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+//@Table(name="CourseDetails")   //  the name of the table is course_details  
+//@Table(name="Course")   //  you can copmment this as table and class is the same
+
 public class Course {
 	@Id
 	@GeneratedValue
