@@ -58,11 +58,19 @@ public void playWithEntityManager() {
 //  entityManager.detach(course2);  // this to not send the update to database for course2 
 //  entityManager.clear();
 	
-	course1.setName("Web Services in 10 steps-update");
+	
 	course2.setName("React js in 120 steps-update");
 	entityManager.refresh(course1);  // this to not update the course record to database and refresh the content by original value
 	entityManager.flush();  // changes will be send out to databases 
 		
+}
+
+public void playWithname_setnull() {
+	// TODO Auto-generated method stub
+	Course course1 = new Course("Web Services in 10 steps");
+	entityManager.persist(course1);
+	course1.setName(null);
+
 }
 
 }
