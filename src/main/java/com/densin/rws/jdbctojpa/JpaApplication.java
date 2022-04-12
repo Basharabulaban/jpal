@@ -34,29 +34,29 @@ public class JpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-	Course courserecord = 	courseRepository.findById(10001L);
-	logger.info("course id -->",courserecord);
-		
-		logger.info("userid 1 -> {} ",	repository.findbyId(1));
-	
-		logger.info("userid 1 -> {} ",	repository.update(new Person("kiki","USA",new Date() )));
-		
-		repository.Deletebyid(101);
-		logger.info("userid 1 -> {} ",	repository.findbyId(1));
-		logger.info("find all {} ",	repository.findAll());
-		
-		logger.info("findById(10001L)-->",courserecord);
-		
-		
-		logger.info("course id = 10001 -> {} ",courseRepository.findById(10001L));
-	//	courseRepository.deleteById(10002L);;
-		logger.info("course id = 10001 -> {} ",courseRepository.findById(10002L));
-		
-		courseRepository.save(new Course("Microservises in 100 steps"));  // this is save new record with .save
-		courseRepository.playWithcreate_updaterecordwithdate();
-		
-		courseRepository.playWithEntityManager();
-		
+//	Course courserecord = 	courseRepository.findById(10001L);
+//	logger.info("course id -->",courserecord);
+//		
+//		logger.info("userid 1 -> {} ",	repository.findbyId(1));
+//	
+//		logger.info("userid 1 -> {} ",	repository.update(new Person("kiki","USA",new Date() )));
+//		
+//		repository.Deletebyid(101);
+//		logger.info("userid 1 -> {} ",	repository.findbyId(1));
+//		logger.info("find all {} ",	repository.findAll());
+//		
+//		logger.info("findById(10001L)-->",courserecord);
+//		
+//		
+//		logger.info("course id = 10001 -> {} ",courseRepository.findById(10001L));
+//	//	courseRepository.deleteById(10002L);;
+//		logger.info("course id = 10001 -> {} ",courseRepository.findById(10002L));
+//		
+//		courseRepository.save(new Course("Microservises in 100 steps"));  // this is save new record with .save
+//		courseRepository.playWithcreate_updaterecordwithdate();
+//		
+//		courseRepository.playWithEntityManager();
+//		
 	
 		
 		
