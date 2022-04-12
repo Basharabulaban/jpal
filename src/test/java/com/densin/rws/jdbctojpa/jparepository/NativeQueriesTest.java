@@ -29,13 +29,7 @@ class NativeQueriesTest {
 
 
 
-	@Test
-	void JPQL_where_named_query() { // alt shift l to extract local variables
-		TypedQuery<Course> query = entityManager.createNamedQuery("query_get_specfic_steps", Course.class);
-		List<Course> resultList = query.getResultList();
-		logger.info("typed1 Select c from Course c where name like %100 steps -> {} ", resultList);
-
-	}
+	
 	
 	@Test    // this is the latest to use createNamedQuery , which teh same as previous method
 	void native_queries_basic() {
@@ -45,5 +39,13 @@ class NativeQueriesTest {
 
 	}
 	
+	
+	@Test
+	void Native_Queries_Advance_using_where() { // alt shift l to extract local variables
+		Query query = entityManager.createNativeQuery("Select * from COURSE where name like '%100 steps'", Course.class);
+		List<Course> resultList = query.getResultList();
+		logger.info("NativeQuery Select * from COURSE where name like %100 steps -> {} ", resultList);
+
+	}
 	
 }
