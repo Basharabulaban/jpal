@@ -48,4 +48,15 @@ class NativeQueriesTest {
 
 	}
 	
+	@Test
+	void Native_Queries_Advance_using_Prameter() { // alt shift l to extract local variables
+		Query query = entityManager.createNativeQuery("Select * from COURSE where id=?", Course.class);
+		query.setParameter(1, 10001L);
+		List<Course> resultList = query.getResultList();
+		logger.info("NativeQuery Select * from COURSE where id = ? -> {} ", resultList);
+
+	}
+	
+	
+	
 }
