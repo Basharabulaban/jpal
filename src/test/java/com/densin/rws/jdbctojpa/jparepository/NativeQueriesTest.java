@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -65,5 +66,19 @@ class NativeQueriesTest {
 		logger.info("NativeQuery using named parameter Select * from COURSE where id = :id -> {} ", resultList);
 
 	}
+	
+	
+	@Test
+	@Transactional
+	
+	void Native_Queries_to_Update() { // alt shift l to extract local variables
+		Query query = entityManager.createNativeQuery("update COURSE set LAST_UPDATE_DATE = sysdate()");
+	
+		int noOfRowsUpdated = query.executeUpdate();
+		logger.info(" Native_Queries_to_Update update * from set last_updated_date= sysdate() -> {} ", noOfRowsUpdated);
+		 
+	}
+	
+	
 	
 }
