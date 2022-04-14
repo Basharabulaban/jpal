@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -32,8 +33,9 @@ public class Student {
 	// @Column(name="fullname",nullable = false) // name can not have null value
 	@Column(nullable = false)
 	private String name;
+@OneToOne
+	private String passport;
 
-	
 	@Override
 	public String toString() {
 		return "Student [name=" + name + "]";
