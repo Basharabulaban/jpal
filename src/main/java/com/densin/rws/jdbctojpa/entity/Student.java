@@ -34,7 +34,7 @@ public class Student {
 	@Column(nullable = false)
 	private String name;
 @OneToOne
-	private String passport;
+	private Passport passport;
 
 	@Override
 	public String toString() {
