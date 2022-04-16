@@ -33,12 +33,12 @@ values(10003L,'Java in 10 steps',sysdate(), sysdate());
 
 
 
-insert into student(id,name)
-values(20001,'bashar');
-insert into student(id,name)
-values(20002,'Yaman');
-insert into student(id,name)
-values(20003,'Ahmad');
+insert into student(id,name,passport_id)
+values(20001,'bashar',40001);
+insert into student(id,name,passport_id)
+values(20002,'Yaman',40002);
+insert into student(id,name,passport_id)
+values(20003,'Ahmad',40003);
 
 insert into passport(id,number)
 values(40001,'B123456');
