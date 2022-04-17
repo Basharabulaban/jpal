@@ -24,6 +24,14 @@ import org.hibernate.annotations.UpdateTimestamp;
 //})
 
 public class Student {
+	public Passport getPassport() {
+		return passport;
+	}
+
+	public void setPassport(Passport passport) {
+		this.passport = passport;
+	}
+
 	@Id
 	@GeneratedValue
 	private Long id;
