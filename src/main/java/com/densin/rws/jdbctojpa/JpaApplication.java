@@ -13,6 +13,7 @@ import com.densin.rws.jdbctojpa.entity.Course;
 import com.densin.rws.jdbctojpa.entity.Person;
 import com.densin.rws.jdbctojpa.jpa.PersonJpaRepository;
 import com.densin.rws.jdbctojpa.jparepository.CourseRepository;
+import com.densin.rws.jdbctojpa.jparepository.StudentRepository;
 
 import net.bytebuddy.asm.Advice.This;
 
@@ -26,7 +27,11 @@ public class JpaApplication implements CommandLineRunner {
  @Autowired
  private CourseRepository courseRepository;
  
-
+ @Autowired
+ private StudentRepository studentRepository;
+ 
+ //saveStudentWithPassport
+ 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaApplication.class, args);
 	}
@@ -59,6 +64,8 @@ public class JpaApplication implements CommandLineRunner {
 //		
 	
 		
+		
+		studentRepository.saveStudentWithPassport();
 		
 	}
 
