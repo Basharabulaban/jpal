@@ -27,8 +27,10 @@ class StudentRepositoryTest {
 EntityManager em;
 	@Test
 	void retreiveStudentandPasportdetails() {
-		
-
+	Student st = 	em.find(Student.class, 20002L);
+	
+	logger.info("Student ->{} ",st);
+	logger.info("getPassport -- >{} " ,st.getPassport());
 	}
 	
 	
