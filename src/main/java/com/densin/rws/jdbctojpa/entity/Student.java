@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
@@ -41,7 +42,7 @@ public class Student {
 	// @Column(name="fullname",nullable = false) // name can not have null value
 	@Column(nullable = false)
 	private String name;
-@OneToOne
+@OneToOne(fetch=FetchType.LAZY)
 	private Passport passport;
 
 	@Override
