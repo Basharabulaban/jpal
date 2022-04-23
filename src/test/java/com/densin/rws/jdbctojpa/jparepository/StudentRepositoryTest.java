@@ -37,6 +37,7 @@ EntityManager em;
 	@Transactional
 	void sometest() {
 	// Database operation 1 - retireive student
+		Student student =em.find(Student.class, 20001L) ;
 		// Database operation 1 - retireive passpoert
 		// Database operation 1 - update passport 
 		// Database operation 1 - update student 
