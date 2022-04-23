@@ -32,9 +32,15 @@ EntityManager em;
 	Student st = 	em.find(Student.class, 20002L);
 	
 	logger.info("Student ->{} ",st);
-	logger.info("getPassport -- >{} " ,st.getPassport());
 	}
-	
+	@Test
+	@Transactional
+	void sometest() {
+	// Database operation 1 - retireive student
+		// Database operation 1 - retireive passpoert
+		// Database operation 1 - update passport 
+		// Database operation 1 - update student 
+	}
 	
 	@Test
 	void findById_basic() {
