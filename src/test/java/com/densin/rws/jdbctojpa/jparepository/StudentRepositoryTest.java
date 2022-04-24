@@ -35,7 +35,7 @@ EntityManager em;
 	logger.info("Student ->{} ",st);
 	}
 	@Test
-	@Transactional  //persistent context 
+	@Transactional  //persistence context 
 	void sometest() {
 	// Database operation 1 - retireive student
 		Student student =em.find(Student.class, 20001L) ;
