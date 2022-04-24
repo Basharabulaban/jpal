@@ -113,6 +113,24 @@ public void saveStudentWithPassport() {
 		
 }
 
+public void SomeOperationToUnderstandPersitent_Context() {
+	// Database operation 1 - retireive student
+	Student student = entityManager.find(Student.class, 20001L);
 
+	logger.info("student ->", student);
+	// Database operation 1 - retireive passpoert
+	Passport passport = student.getPassport();
+
+	logger.info("passport ->", passport);
+
+	// Database operation 1 - update passport
+	passport.setNumber("E123456");
+	// persistence context (passport ++ , student)
+	logger.info("passport.setNumber(\"E123456\") ->", passport);
+	// Database operation 1 - update student
+	student.setName("Yaman - update");
+	// persistence context (passport ++ , student++)
+	logger.info("student ->", student);
+}
 
 }
