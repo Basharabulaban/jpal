@@ -25,36 +25,26 @@ class StudentRepositoryTest {
 	@Autowired
 	StudentRepository repository;
 
-@Autowired
-EntityManager em;
+	@Autowired
+	EntityManager em;
+
 	@Test
 	@Transactional
 	void retreiveStudentandPasportdetails() {
-	Student st = 	em.find(Student.class, 20002L);
-	
-	logger.info("Student ->{} ",st);
+		Student st = em.find(Student.class, 20002L);
+
+		logger.info("Student ->{} ", st);
 	}
+
 	@Test
-	@Transactional  //persistence context 
+	@Transactional // persistence context  /// should be comments
 	void sometest() {
-	// Database operation 1 - retireive student
-		Student student =em.find(Student.class, 20001L) ;
-		
-		logger.info("student ->",student);
-		// Database operation 1 - retireive passpoert
-	Passport passport =	student.getPassport();
-	logger.info("passport ->",passport);
-	
-		// Database operation 1 - update passport 
-	passport.setNumber("E123456");
-	
-	logger.info("passport.setNumber(\"E123456\") ->",passport);
-		// Database operation 1 - update student 
-	student.setName("Yaman - update");
-	logger.info("student ->",student);
-	
+		repository.SomeOperationToUnderstandPersitent_Context();
+
 	}
+
 	
+
 //	@Test
 //	void findById_basic() {
 //		Student student = repository.findById(10001L);
@@ -120,5 +110,5 @@ EntityManager em;
 //	
 //
 //	}
-	
+
 }
