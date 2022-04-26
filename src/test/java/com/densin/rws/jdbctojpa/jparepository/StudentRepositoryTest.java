@@ -34,8 +34,19 @@ class StudentRepositoryTest {
 		Student st = em.find(Student.class, 20002L);
 
 		logger.info("Student ->{} ", st);
+		logger.info("Passport ->{} ", st.getPassport());    
 	}
 
+	@Test
+	@Transactional
+	void retreivePassportandAssociatedStudentdetails() {
+		Passport passport = em.find(Passport.class, 40002L);
+
+		logger.info("Passport ->{} ", passport);
+		logger.info("Passport ->{} ", passport.getStudent());    
+	}
+	
+	
 	@Test
 	@Transactional // persistence context  /// should be comments
 	void sometest() {
