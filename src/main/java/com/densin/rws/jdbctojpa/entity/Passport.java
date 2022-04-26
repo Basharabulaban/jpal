@@ -45,7 +45,8 @@ public class Passport {
 		this.student = student;
 	}
 
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY, mappedBy = "passport")// add mappedBy and passport variable;;;; is from student class to cosnider  the stundet class or table is the main our owner side relationship 
+	// now re run the application , you will see the student table has the passport id  , but the passport doesnot has student id
 	private Student student ;
 	
 	@Override
