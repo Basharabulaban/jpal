@@ -4,10 +4,12 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -30,15 +32,19 @@ public class Passport {
 	// updatable,length,precision, scall
 
 	// @Column(name="fullname",nullable = false) // name can not have null value
+	
 	@Column(nullable = false)
 	private String number;
 
+	 @OneToOne(fetch=FetchType.LAZY)
+	private Student student ;
 	
 	@Override
 	public String toString() {
 		return "Passport [number=" + number + "]";
 	}
 
+	
 	protected Passport() {
 		// super();
 	}
