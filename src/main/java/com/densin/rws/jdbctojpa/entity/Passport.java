@@ -36,7 +36,16 @@ public class Passport {
 	@Column(nullable = false)
 	private String number;
 
-	 @OneToOne(fetch=FetchType.LAZY)
+	 public Student getStudent() {
+		return student;
+	}
+
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	@OneToOne(fetch=FetchType.LAZY)
 	private Student student ;
 	
 	@Override
