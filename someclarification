@@ -1,0 +1,22 @@
+when do we need @Transactional in an unit test ?? sometimes why?
+if using jpa 
+Unit Test -> Repository - > EntityManager
+
+
+unit testing  -> EntityManager   (if using Entitymanager in test ) no need for transactional as unit test shall provide it
+
+
+
+
+@Transaction 
+void some methodswithchange(){
+em.persisit(user1);
+e.persist(user2);
+
+em.flush()  // push very thing to database
+
+//Change user1
+//Change user2
+
+
+}
