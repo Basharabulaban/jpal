@@ -1,0 +1,21 @@
+Entites - user , co,ment
+
+
+ Do Read Only Methods need a transactions?
+List<Comment> someReadOnlyMethofs(){
+	User user =em.find(User.class.1L);// sucessed  because using em
+    LIst<Comment> comments=user.getComments(); failed 
+    return comments;
+    
+
+}
+
+
+@Transactional 
+List<Comment> someReadOnlyMethofs(){
+	User user =em.find(User.class.1L);// 
+    LIst<Comment> comments=user.getComments();
+    return comments;
+    
+
+}
