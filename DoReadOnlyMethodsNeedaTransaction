@@ -4,7 +4,7 @@ Entites - user , co,ment
  Do Read Only Methods need a transactions?
 List<Comment> someReadOnlyMethofs(){
 	User user =em.find(User.class.1L);// sucessed  because using em
-    LIst<Comment> comments=user.getComments(); failed 
+    LIst<Comment> comments=user.getComments(); /////  failed 
     return comments;
     
 
@@ -14,7 +14,7 @@ List<Comment> someReadOnlyMethofs(){
 @Transactional 
 List<Comment> someReadOnlyMethofs(){
 	User user =em.find(User.class.1L);// 
-    LIst<Comment> comments=user.getComments();
+    LIst<Comment> comments=user.getComments();//  successful as it need connection to databases
     return comments;
     
 
