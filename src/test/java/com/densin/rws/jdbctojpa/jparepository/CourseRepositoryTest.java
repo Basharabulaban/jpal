@@ -22,6 +22,7 @@ class CourseRepositoryTest {
 	CourseRepository repository;
 
 	@Test
+	@DirtiesContext
 	void findById_basic() {
 		Course course = repository.findById(10001L);
 
@@ -32,7 +33,8 @@ class CourseRepositoryTest {
 
 	
 	@Test
-	 @DirtiesContext   // in order to return back data as it were 
+	 @DirtiesContext   // in order to return back data as it were , what every changes are done , return it back 
+	 
 	void deleteById_basic() {
 		repository.deleteById(10002L);
 		assertNull(repository.findById(10002L));
